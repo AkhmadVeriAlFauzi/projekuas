@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AlternativeController;
+use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\sessionController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -17,16 +20,61 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('sesi.index', [
+        "title" => "Masuk"
+    ]);
+});
+
+Route::get('/sesi', [SessionController::class, 'index']);
+Route::post('/sesi/login', [SessionController::class, 'masuk']);
+
+
+Route::get('/home', function () {
     return view('home', [
         "title" => "home"
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "about"
-    ]);
+
+//criteria
+Route::get('/kriteria', [CriteriaController::class, 'index']);
+Route::get('/createKriteria', [CriteriaController::class, 'create']);
+Route::post('/createKriteria', [CriteriaController::class, 'store']);
+Route::get('/{id}/editKriteria', [CriteriaController::class, 'edit']);
+Route::put('/{id}/editKriteria', [CriteriaController::class, 'update']);
+Route::get('/{id}/deleteKriteria', [CriteriaController::class, 'destroy']);
+
+
+// Route::get('/createKriteria', function () {
+//     return view('createKriteria', [
+//         "title" => "createKriteria"
+//     ]);
+// });
+
+//alternative
+Route::get('/alternative', [AlternativeController::class, 'index']);
+Route::get('/createAlternative',[AlternativeController::class, 'create']);
+Route::post('/createAlternative',[AlternativeController::class, 'store']);
+Route::get('/{id}/editAlternative',[AlternativeController::class, 'edit']);
+Route::put('/{id}/editAlternative',[AlternativeController::class, 'update']);
+Route::get('/{id}/deleteAlternative',[AlternativeController::class, 'destroy']);
+
+//nilai
+Route::get('nilai',function() {
+   return view('nilai',[
+    'title' => 'nilai'
+   ]); 
 });
+
+//hasil
+
+Route::get('hasil',function() {
+    return view('hasil',[
+     'title' => 'hasil'
+    ]); 
+ });
+
+ //
 
     
     Route::get('/posts', [PostController::class, 'index']);
@@ -34,6 +82,7 @@ Route::get('/about', function () {
     //halaman single post
 
     Route::get('posts/{slug}', [PostController::class, 'show']);
+
 
 
 
