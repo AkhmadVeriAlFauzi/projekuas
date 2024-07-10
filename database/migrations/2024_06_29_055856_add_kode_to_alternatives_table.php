@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alternatives', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_alternative');
-            $table->string('alamat');
-            
+        Schema::table('alternatives', function (Blueprint $table) {
+            $table->string('C1');
+            $table->string('C2');
+            $table->string('C3');
+            $table->string('C4');
+            $table->string('C5');
         });
     }
 
@@ -24,6 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alternatives');
+        Schema::table('alternatives', function (Blueprint $table) {
+            //
+        });
     }
 };

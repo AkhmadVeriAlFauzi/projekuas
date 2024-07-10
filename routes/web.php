@@ -4,6 +4,7 @@ use App\Http\Controllers\AlternativeController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\HasilController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -19,11 +20,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('sesi.index', [
+Route::get('/', function (){
+    return view('landingPage',[
+        "title" => 'landingPage'
+    ]);
+});
+
+Route::get('/register', function () {
+    return view('sesi/register', [
         "title" => "Masuk"
     ]);
 });
+Route::post('/sesi/create',[SessionController::class,'create']);
+
+Route::get('/login', function () {
+    return view('sesi/index', [
+        "title" => "Masuk"
+    ]);
+})->name('index');
 
 Route::get('/sesi', [SessionController::class, 'index']);
 Route::post('/sesi/login', [SessionController::class, 'masuk']);
@@ -59,20 +73,14 @@ Route::get('/{id}/editAlternative',[AlternativeController::class, 'edit']);
 Route::put('/{id}/editAlternative',[AlternativeController::class, 'update']);
 Route::get('/{id}/deleteAlternative',[AlternativeController::class, 'destroy']);
 
-//nilai
-Route::get('nilai',function() {
-   return view('nilai',[
-    'title' => 'nilai'
-   ]); 
-});
-
 //hasil
 
-Route::get('hasil',function() {
-    return view('hasil',[
-     'title' => 'hasil'
-    ]); 
- });
+Route::get('/hasil',[HasilController::class, 'hasil']);
+// Route::get('hasil',function() {
+//     return view('hasil',[
+//      'title' => 'hasil'
+//     ]); 
+//  });
 
  //
 

@@ -41,11 +41,11 @@
                             <label for="bobot" class="form-label">Bobot Kriteria</label>
                             <select class="form-select" name="bobot" required>
                                 <option value="" disabled selected>Pilih Bobot Kriteria</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option>5</option>
+                                <option>10</option>
+                                <option>15</option>
+                                <option>25</option>
+                                <option>30</option>
                             </select>
                         </div>
 

@@ -1,6 +1,79 @@
-@extends('layouts.main')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-@section('container')
+<link rel="icon" href="{{ asset('asset/bajukuwhite.svg') }}">
+<title>Baju-Ku</title>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="{{ asset('asset/bajukuwhite.svg') }}" height="25px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {{ ($title === "welcome") ? 'active' : '' }}" href="/">Home</a>
+                </li>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- <header class="bg-dark text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">Welcome to Baju-Ku</h1>
+        <p class="lead">Sistem Pendukung Keputusan Penilaian Toko Baju dengan Metode Weight Product (WP)</p>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm rounded">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Welcome to Our Website!</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc ut
+                        purus rhoncus ullamcorper. Ut varius imperdiet nisl, id laoreet neque tempor eu. Aliquam erat
+                        volutpat. Proin id risus venenatis, varius augue non, gravida orci. Nam efficitur nibh ac urna
+                        tempus feugiat. In hac habitasse platea dictumst. Phasellus laoreet ligula sed ante facilisis,
+                        eget congue nisi mollis. Duis bibendum urna sed semper lacinia. Pellentesque ut semper justo.
+                        Nullam quis felis ac elit eleifend venenatis. Aenean quis scelerisque nisi, nec feugiat tortor.
+                        Morbi et convallis enim.
+
+                        Suspendisse potenti. Proin at massa eu purus iaculis ullamcorper non eget nulla. Nam lacinia
+                        hendrerit tincidunt. Duis vestibulum urna sit amet nibh tincidunt, eu fermentum sem congue. Nam
+                        volutpat justo in nunc auctor, sed malesuada enim molestie. Quisque lacinia, nisi vel sodales
+                        ultrices, dui risus ullamcorper libero, at rutrum nisl lectus at turpis. Nulla facilisi. Nam a
+                        nisi eget orci malesuada placerat. Donec volutpat posuere libero, ac vestibulum lorem posuere a.
+                    </p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="card shadow-sm rounded">
+                <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Content</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                    <a href="#" class="btn btn-secondary">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 
 <div class="container">
     <div class="primary-bg" style="padding: 40px 0px !important;">
@@ -295,4 +368,3 @@
         background-color: var(--second);
     }
 </style>
-@endsection

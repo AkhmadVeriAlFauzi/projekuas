@@ -26,11 +26,21 @@ class AlternativeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_toko' => 'required'
+            'nama_toko' => 'required',
+            'C1' => 'required',
+            'C2' => 'required',
+            'C3' => 'required',
+            'C4' => 'required',
+            'C5' => 'required'
         ]);
 
         Alternative::create([
-            'nama_toko' => $request->nama_toko
+            'nama_toko' => $request->nama_toko,
+            'C1' => $request->C1,
+            'C2' => $request->C2,
+            'C3' => $request->C3,
+            'C4' => $request->C4,
+            'C5' => $request->C5
         ]);
 
         return redirect('createAlternative')->with('status', 'Alternative Berhasil Ditambahkan');
@@ -48,11 +58,21 @@ class AlternativeController extends Controller
     public function update(Request $request, int $id)
     {
         $request->validate([
-            'nama_toko' => 'required'
+            'nama_toko' => 'required',
+            'C1' => 'required',
+            'C2' => 'required',
+            'C3' => 'required',
+            'C4' => 'required',
+            'C5' => 'required'
         ]);
 
         Alternative::findOrFail($id)->update([
             'nama_toko' => $request->nama_toko,
+            'C1' => $request->C1,
+            'C2' => $request->C2,
+            'C3' => $request->C3,
+            'C4' => $request->C4,
+            'C5' => $request->C5
         ]);
 
         return redirect()->back()->with('status', 'Alternative Berhasil Diupdate');

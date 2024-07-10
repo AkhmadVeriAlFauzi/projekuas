@@ -12,6 +12,6 @@ class Alternative extends Model
     protected $table = 'alternatives';
 
     protected $fillable = [
-        'nama_toko'
+        'nama_toko', 'C1', 'C2', 'C3', 'C4', 'C5'
     ];
 }
